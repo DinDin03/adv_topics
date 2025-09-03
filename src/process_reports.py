@@ -38,7 +38,7 @@ def extract_report_sections(report_text):
 def create_medical_prompt(sections):
 
     prompt = f"""
-You are an experienced radiologist analyzing a case. Provide a structured diagnostic assessment.
+You are an experienced pediatric radiologist analyzing a case. Provide a structured diagnostic assessment.
 
 EXAMINATION: {sections['examination']}
 CLINICAL HISTORY: {sections['clinical_details']}

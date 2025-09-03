@@ -61,4 +61,4 @@ def process_batch_reports(folder_path="all", max_reports=5):
 
 if __name__ == "__main__":
     # Test with 5 reports first
-    process_batch_reports(max_reports=5)
+    process_batch_reports(max_reports=100)
