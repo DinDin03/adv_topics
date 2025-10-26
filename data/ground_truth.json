@@ -1,0 +1,155 @@
+[
+  {
+    "filename": "000d1e6f-b04c-402f-83c7-df146ae03eb2.txt",
+    "patient_info": {
+      "age_category": "pediatric",
+      "clinical_history": "Left shoulder pain. MRSA positive. ? septic arthritis."
+    },
+    "ground_truth": {
+      "primary_diagnosis": "Normal radiographic examination / Septic arthritis cannot be excluded clinically",
+      "differential_diagnoses": [
+        "Septic arthritis (clinical suspicion, radiographically normal)",
+        "Soft tissue infection",
+        "MRSA-related musculoskeletal infection"
+      ],
+      "inappropriate_diagnoses": [
+        "Osteoarthritis",
+        "Rotator cuff tear",
+        "Degenerative changes"
+      ],
+      "key_findings": [
+        "Normal chest X-ray",
+        "Normal left shoulder alignment",
+        "No soft tissue swelling",
+        "No bony lesions"
+      ],
+      "appropriate_recommendations": [
+        "Clinical correlation",
+        "Consider ultrasound or MRI if clinical suspicion high",
+        "Blood cultures",
+        "Joint aspiration if effusion develops",
+        "Infectious disease or orthopedics consult"
+      ],
+      "notes": "MRSA positive patient - should focus on infectious workup, not degenerative adult conditions"
+    },
+    "annotated": true
+  },
+  {
+    "filename": "0146a6aa-5170-40f9-8067-252777ae8ed0.txt",
+    "patient_info": {
+      "age_category": "pediatric",
+      "clinical_history": "Right thigh abscess. Exclude osteomyelitis."
+    },
+    "ground_truth": {
+      "primary_diagnosis": "Soft tissue inflammation, osteomyelitis not excluded",
+      "differential_diagnoses": [
+        "Soft tissue abscess",
+        "Cellulitis",
+        "Early osteomyelitis (not visible on X-ray)",
+        "Septic arthritis"
+      ],
+      "inappropriate_diagnoses": [],
+      "key_findings": [
+        "Soft tissue swelling and inflammatory changes",
+        "No aggressive bone abnormalities",
+        "No periosteal reaction (yet)",
+        "No soft tissue gas"
+      ],
+      "appropriate_recommendations": [
+        "MRI to evaluate for osteomyelitis",
+        "Ultrasound for abscess localization",
+        "Blood cultures",
+        "Surgical consultation for drainage",
+        "Antibiotic therapy"
+      ],
+      "notes": "X-ray cannot exclude osteomyelitis - need advanced imaging"
+    },
+    "annotated": true
+  },
+  {
+    "filename": "0222523e-1ea1-4841-9ab0-f433fc9cc45f.txt",
+    "patient_info": {
+      "age_category": "pediatric",
+      "clinical_history": "Juvenile rheumatoid arthritis. Twisted left knee then fell onto it. PHx patella dislocations. Now unable to WB on left leg."
+    },
+    "ground_truth": {
+      "primary_diagnosis": "Minimal knee effusion in patient with JIA, no acute fracture",
+      "differential_diagnoses": [
+        "JIA flare",
+        "Traumatic effusion",
+        "Patellar subluxation (no acute dislocation seen)",
+        "Soft tissue injury"
+      ],
+      "inappropriate_diagnoses": [
+        "Osteochondritis dissecans without supporting evidence",
+        "Patellofemoral pain syndrome (too vague for this acute presentation)"
+      ],
+      "key_findings": [
+        "Minimal knee joint effusion",
+        "Normal alignment",
+        "No fracture",
+        "No focal bony lesion"
+      ],
+      "appropriate_recommendations": [
+        "Clinical correlation with rheumatology",
+        "Consider MRI if pain persists",
+        "Assess for JIA flare vs traumatic injury",
+        "Monitor for weight-bearing tolerance"
+      ],
+      "notes": "Known JIA patient - should prioritize JIA-related complications"
+    },
+    "annotated": true
+  },
+  {
+    "filename": "03d68077-7a9a-40bd-8265-c6a1208c0f0a.txt",
+    "patient_info": {
+      "age_category": "pediatric",
+      "clinical_history": "Arthritis. Tender over SI joints and decreased range of movement lower limbs."
+    },
+    "ground_truth": {
+      "primary_diagnosis": "Radiographically normal pelvis and hips, clinical arthritis requires further workup",
+      "differential_diagnoses": [
+        "Juvenile Idiopathic Arthritis (JIA)",
+        "Enthesitis-related arthritis",
+        "Sacroiliitis (early, not visible on X-ray)",
+        "Inflammatory arthritis"
+      ],
+      "inappropriate_diagnoses": [
+        "Osteoarthritis",
+        "Ankylosing spondylitis (more common in adults)",
+        "Degenerative changes"
+      ],
+      "key_findings": [
+        "Normal hip alignment",
+        "Smooth articular surfaces",
+        "No joint space narrowing",
+        "No erosions",
+        "No sacroiliac joint abnormalities visible"
+      ],
+      "appropriate_recommendations": [
+        "Rheumatology referral",
+        "MRI of pelvis/SI joints for early inflammatory changes",
+        "Laboratory workup (ESR, CRP, HLA-B27, ANA)",
+        "Clinical assessment for JIA subtypes"
+      ],
+      "notes": "Pediatric patient - should NOT suggest osteoarthritis or adult degenerative conditions"
+    },
+    "annotated": true
+  },
+  {
+    "filename": "TEMPLATE.txt",
+    "patient_info": {
+      "age_category": "pediatric",
+      "clinical_history": ""
+    },
+    "ground_truth": {
+      "primary_diagnosis": "",
+      "differential_diagnoses": [],
+      "inappropriate_diagnoses": [],
+      "key_findings": [],
+      "appropriate_recommendations": [],
+      "notes": ""
+    },
+    "annotated": false
+  }
+]

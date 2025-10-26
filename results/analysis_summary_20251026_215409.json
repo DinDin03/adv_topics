@@ -1,0 +1,111 @@
+{
+  "generated_at": "2025-10-26T21:54:09.053968",
+  "total_batches_analyzed": 3,
+  "batches": [
+    {
+      "filename": "batch_results_20250902_143447.json",
+      "total_reports": 5,
+      "processing_times": {
+        "count": 5,
+        "mean": 11.055049610137939,
+        "median": 10.429462194442749,
+        "stdev": 1.203899934119984,
+        "min": 10.045397281646729,
+        "max": 12.899098634719849,
+        "total": 55.2752480506897
+      },
+      "output_lengths": {
+        "mean_chars": 2607.4,
+        "median_chars": 2402,
+        "min_chars": 2279,
+        "max_chars": 3233
+      },
+      "diagnosis_frequency": {
+        "septic arthritis": 1,
+        "juvenile idiopathic arthritis": 0,
+        "jia": 0,
+        "osteomyelitis": 0,
+        "abscess": 1,
+        "cellulitis": 1,
+        "fracture": 2,
+        "effusion": 2,
+        "inflammation": 4,
+        "infection": 3,
+        "normal": 5,
+        "osteoarthritis": 3,
+        "rotator cuff": 1,
+        "degenerative": 1
+      }
+    },
+    {
+      "filename": "batch_results_20250903_224857.json",
+      "total_reports": 25,
+      "processing_times": {
+        "count": 25,
+        "mean": 10.418055772781372,
+        "median": 9.898773908615112,
+        "stdev": 2.088304540163406,
+        "min": 6.819685459136963,
+        "max": 18.138998985290527,
+        "total": 260.4513943195343
+      },
+      "output_lengths": {
+        "mean_chars": 2425.4,
+        "median_chars": 2434,
+        "min_chars": 1460,
+        "max_chars": 3038
+      },
+      "diagnosis_frequency": {
+        "septic arthritis": 16,
+        "juvenile idiopathic arthritis": 0,
+        "jia": 0,
+        "osteomyelitis": 7,
+        "abscess": 5,
+        "cellulitis": 1,
+        "fracture": 12,
+        "effusion": 16,
+        "inflammation": 16,
+        "infection": 18,
+        "normal": 19,
+        "osteoarthritis": 13,
+        "rotator cuff": 1,
+        "degenerative": 6
+      }
+    },
+    {
+      "filename": "batch_results_20250903_231835.json",
+      "total_reports": 100,
+      "processing_times": {
+        "count": 100,
+        "mean": 12.412344312667846,
+        "median": 12.612732172012329,
+        "stdev": 2.7821321999659054,
+        "min": 4.112502336502075,
+        "max": 19.270695447921753,
+        "total": 1241.2344312667847
+      },
+      "output_lengths": {
+        "mean_chars": 2287.88,
+        "median_chars": 2327.5,
+        "min_chars": 433,
+        "max_chars": 3542
+      },
+      "diagnosis_frequency": {
+        "septic arthritis": 61,
+        "juvenile idiopathic arthritis": 13,
+        "jia": 13,
+        "osteomyelitis": 31,
+        "abscess": 9,
+        "cellulitis": 6,
+        "fracture": 49,
+        "effusion": 53,
+        "inflammation": 64,
+        "infection": 63,
+        "normal": 57,
+        "osteoarthritis": 39,
+        "rotator cuff": 2,
+        "degenerative": 26
+      }
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+Batch,Total_Reports,Mean_Time,Median_Time,Throughput_Reports_Per_Min,Mean_Output_Length
+20250902_143447,5,11.06,10.43,5.43,2607
+20250903_224857,25,10.42,9.90,5.76,2425
+20250903_231835,100,12.41,12.61,4.83,2288

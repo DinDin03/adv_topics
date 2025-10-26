@@ -1,0 +1,154 @@
+{
+  "total_cases_evaluated": 4,
+  "average_completeness_score": 1.0,
+  "average_differential_coverage": 0.812,
+  "pediatric_appropriateness_rate": 0.75,
+  "cases_with_inappropriate_diagnoses": 1.0,
+  "section_presence_percentage": {
+    "clinical_assessment": 100.0,
+    "differential_diagnosis": 100.0,
+    "clinical_correlation": 100.0,
+    "recommendations": 100.0
+  },
+  "inappropriate_diagnoses_frequency": {
+    "osteoarthritis": 1,
+    "rotator cuff": 1
+  },
+  "individual_evaluations": [
+    {
+      "filename": "000d1e6f-b04c-402f-83c7-df146ae03eb2.txt",
+      "section_completeness": {
+        "clinical_assessment": true,
+        "differential_diagnosis": true,
+        "clinical_correlation": true,
+        "recommendations": true
+      },
+      "completeness_score": 1.0,
+      "differential_coverage": {
+        "mentioned": [
+          "Septic arthritis (clinical suspicion, radiographically normal)",
+          "Soft tissue infection",
+          "MRSA-related musculoskeletal infection"
+        ],
+        "missed": [],
+        "coverage_rate": 1.0,
+        "total_expected": 3
+      },
+      "inappropriate_diagnoses_found": [
+        "osteoarthritis",
+        "rotator cuff"
+      ],
+      "pediatric_appropriateness": 0.0,
+      "ground_truth_info": {
+        "primary_diagnosis": "Normal radiographic examination / Septic arthritis cannot be excluded clinically",
+        "expected_differentials": [
+          "Septic arthritis (clinical suspicion, radiographically normal)",
+          "Soft tissue infection",
+          "MRSA-related musculoskeletal infection"
+        ]
+      },
+      "processing_time": 19.270695447921753
+    },
+    {
+      "filename": "0146a6aa-5170-40f9-8067-252777ae8ed0.txt",
+      "section_completeness": {
+        "clinical_assessment": true,
+        "differential_diagnosis": true,
+        "clinical_correlation": true,
+        "recommendations": true
+      },
+      "completeness_score": 1.0,
+      "differential_coverage": {
+        "mentioned": [
+          "Soft tissue abscess",
+          "Cellulitis",
+          "Early osteomyelitis (not visible on X-ray)",
+          "Septic arthritis"
+        ],
+        "missed": [],
+        "coverage_rate": 1.0,
+        "total_expected": 4
+      },
+      "inappropriate_diagnoses_found": [],
+      "pediatric_appropriateness": 1.0,
+      "ground_truth_info": {
+        "primary_diagnosis": "Soft tissue inflammation, osteomyelitis not excluded",
+        "expected_differentials": [
+          "Soft tissue abscess",
+          "Cellulitis",
+          "Early osteomyelitis (not visible on X-ray)",
+          "Septic arthritis"
+        ]
+      },
+      "processing_time": 9.289023399353027
+    },
+    {
+      "filename": "0222523e-1ea1-4841-9ab0-f433fc9cc45f.txt",
+      "section_completeness": {
+        "clinical_assessment": true,
+        "differential_diagnosis": true,
+        "clinical_correlation": true,
+        "recommendations": true
+      },
+      "completeness_score": 1.0,
+      "differential_coverage": {
+        "mentioned": [
+          "Traumatic effusion",
+          "Patellar subluxation (no acute dislocation seen)",
+          "Soft tissue injury"
+        ],
+        "missed": [
+          "JIA flare"
+        ],
+        "coverage_rate": 0.75,
+        "total_expected": 4
+      },
+      "inappropriate_diagnoses_found": [],
+      "pediatric_appropriateness": 1.0,
+      "ground_truth_info": {
+        "primary_diagnosis": "Minimal knee effusion in patient with JIA, no acute fracture",
+        "expected_differentials": [
+          "JIA flare",
+          "Traumatic effusion",
+          "Patellar subluxation (no acute dislocation seen)",
+          "Soft tissue injury"
+        ]
+      },
+      "processing_time": 13.044230937957764
+    },
+    {
+      "filename": "03d68077-7a9a-40bd-8265-c6a1208c0f0a.txt",
+      "section_completeness": {
+        "clinical_assessment": true,
+        "differential_diagnosis": true,
+        "clinical_correlation": true,
+        "recommendations": true
+      },
+      "completeness_score": 1.0,
+      "differential_coverage": {
+        "mentioned": [
+          "Sacroiliitis (early, not visible on X-ray)",
+          "Inflammatory arthritis"
+        ],
+        "missed": [
+          "Juvenile Idiopathic Arthritis (JIA)",
+          "Enthesitis-related arthritis"
+        ],
+        "coverage_rate": 0.5,
+        "total_expected": 4
+      },
+      "inappropriate_diagnoses_found": [],
+      "pediatric_appropriateness": 1.0,
+      "ground_truth_info": {
+        "primary_diagnosis": "Radiographically normal pelvis and hips, clinical arthritis requires further workup",
+        "expected_differentials": [
+          "Juvenile Idiopathic Arthritis (JIA)",
+          "Enthesitis-related arthritis",
+          "Sacroiliitis (early, not visible on X-ray)",
+          "Inflammatory arthritis"
+        ]
+      },
+      "processing_time": 10.531911611557007
+    }
+  ]
+}
