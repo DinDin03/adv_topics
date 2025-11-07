@@ -134,10 +134,10 @@ PROVIDE STRUCTURED ASSESSMENT:
    - Specialist referrals
 
 CONSTRAINTS:
-✓ Only pediatric conditions
-✗ NO osteoarthritis
-✗ NO degenerative disc disease
-✗ NO rotator cuff pathology
-✗ NO age-related changes
+- Only pediatric conditions
+- NO osteoarthritis
+- NO degenerative disc disease
+- NO rotator cuff pathology
+- NO age-related changes
 
 ```

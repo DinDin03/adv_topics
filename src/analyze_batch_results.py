@@ -166,7 +166,7 @@ class BatchResultsAnalyzer:
                                    if k in inappropriate and v > 0}
 
             if inappropriate_counts:
-                print(f"\n⚠️  INAPPROPRIATE PEDIATRIC DIAGNOSES DETECTED:")
+                print(f"\nWARNING - INAPPROPRIATE PEDIATRIC DIAGNOSES DETECTED:")
                 for diagnosis, count in inappropriate_counts.items():
                     pct = (count / analysis['total_reports']) * 100
                     print(f"  {diagnosis.title()}: {count} cases ({pct:.1f}%)")

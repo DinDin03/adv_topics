@@ -24,8 +24,8 @@ def run_evaluation_pipeline():
 
     # Check if we're in the right directory
     if not os.path.exists('analyze_batch_results.py'):
-        print("❌ Error: Please run this script from the src/ directory")
-        print("   Usage: cd src && python run_full_evaluation.py")
+        print("Error: Please run this script from the src/ directory")
+        print("Usage: cd src && python run_full_evaluation.py")
         return
 
     # Step 1: Analyze batch results
@@ -36,10 +36,10 @@ def run_evaluation_pipeline():
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         analyzer.generate_summary_report(f"../results/analysis_summary_{timestamp}.json")
         analyzer.export_for_paper()
-        print("✓ Batch analysis complete")
+        print("Batch analysis complete")
     except Exception as e:
-        print(f"❌ Error in batch analysis: {e}")
-        print("   Continuing with other steps...\n")
+        print(f"Error in batch analysis: {e}")
+        print("Continuing with other steps\n")
 
     # Step 2: Evaluate system
     print_section("STEP 2/4: Evaluating System Performance")
@@ -63,20 +63,20 @@ def run_evaluation_pipeline():
                 output_path = f"../results/evaluation_{timestamp}.json"
 
                 evaluator.generate_evaluation_report(results_path, output_path)
-                print("✓ System evaluation complete")
+                print("System evaluation complete")
             else:
-                print("⚠️  No batch result files found - skipping evaluation")
+                print("No batch result files found - skipping evaluation")
         else:
-            print("⚠️  Results folder not found - skipping evaluation")
+            print("Results folder not found - skipping evaluation")
 
     except Exception as e:
-        print(f"❌ Error in system evaluation: {e}")
-        print("   Continuing with other steps...\n")
+        print(f"Error in system evaluation: {e}")
+        print("Continuing with other steps\n")
 
     # Step 3: Run prompt experiments
     print_section("STEP 3/4: Running Prompt Experiments")
-    print("⚠️  This step requires Ollama to be running (ollama serve)")
-    print("   Testing 3 reports with 4 prompt versions (may take 2-5 minutes)")
+    print("This step requires Ollama to be running (ollama serve)")
+    print("Testing 3 reports with 4 prompt versions (may take 2-5 minutes)")
 
     user_input = input("\nDo you want to run prompt experiments? (y/n): ")
 
@@ -84,12 +84,12 @@ def run_evaluation_pipeline():
         try:
             import prompt_experiments
             results = prompt_experiments.quick_experiment()
-            print("✓ Prompt experiments complete")
+            print("Prompt experiments complete")
         except Exception as e:
-            print(f"❌ Error in prompt experiments: {e}")
-            print("   Make sure Ollama is running: ollama serve")
+            print(f"Error in prompt experiments: {e}")
+            print("Make sure Ollama is running: ollama serve")
     else:
-        print("⚠️  Skipping prompt experiments")
+        print("Skipping prompt experiments")
 
     # Step 4: Generate paper figures
     print_section("STEP 4/4: Generating Paper Figures and Tables")
@@ -98,43 +98,19 @@ def run_evaluation_pipeline():
         generator = generate_paper_figures.PaperFigureGenerator()
         generator.generate_all_tables()
         generator.generate_summary_statistics()
-        print("✓ Paper figures generated")
+        print("Paper figures generated")
     except Exception as e:
-        print(f"❌ Error generating figures: {e}")
-
-    # Summary
-    end_time = datetime.now()
-    duration = end_time - start_time
-
-    print_section("EVALUATION PIPELINE COMPLETE")
-    print(f"Start Time:    {start_time.strftime('%Y-%m-%d %H:%M:%S')}")
-    print(f"End Time:      {end_time.strftime('%Y-%m-%d %H:%M:%S')}")
-    print(f"Total Duration: {duration.total_seconds():.1f} seconds")
-
-    print("\n📁 Output Locations:")
-    print("   • Batch Analysis:    results/analysis_summary_*.json")
-    print("   • System Evaluation: results/evaluation_*.json")
-    print("   • Prompt Experiments: results/prompt_experiment_*.json")
-    print("   • Paper Tables:      paper_outputs/paper_tables_*.md")
-    print("   • Summary Stats:     paper_outputs/summary_statistics_*.txt")
-
-    print("\n📊 Next Steps:")
-    print("   1. Review generated tables in paper_outputs/")
-    print("   2. Add more ground truth cases to data/ground_truth.json")
-    print("   3. If prompt experiments weren't run, execute: python prompt_experiments.py")
-    print("   4. Use EVALUATION_GUIDE.md for detailed usage instructions")
-
-    print("\n✅ Ready for paper writing!\n")
+        print(f"Error generating figures: {e}")
 
 
 if __name__ == "__main__":
     try:
         run_evaluation_pipeline()
     except KeyboardInterrupt:
-        print("\n\n⚠️  Pipeline interrupted by user")
+        print("\n\nPipeline interrupted by user")
         sys.exit(1)
     except Exception as e:
-        print(f"\n\n❌ Unexpected error: {e}")
+        print(f"\nUnexpected error: {e}")
         import traceback
         traceback.print_exc()
         sys.exit(1)

@@ -239,7 +239,7 @@ class DiagnosticEvaluator:
             print(f"  Differential Coverage: {eval['differential_coverage']['coverage_rate']:.1%} "
                   f"({len(eval['differential_coverage']['mentioned'])}/{eval['differential_coverage']['total_expected']})")
             if eval['inappropriate_diagnoses_found']:
-                print(f"  ⚠️  Inappropriate: {', '.join(eval['inappropriate_diagnoses_found'])}")
+                print(f"  WARNING - Inappropriate: {', '.join(eval['inappropriate_diagnoses_found'])}")
             if eval['differential_coverage']['missed']:
                 print(f"  Missed: {', '.join(eval['differential_coverage']['missed'][:3])}")
 

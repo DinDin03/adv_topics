@@ -36,38 +36,24 @@ def extract_report_sections(report_text):
     return sections
 
 def create_medical_prompt(sections):
-
-    prompt = f"""
-You are an experienced **pediatric radiologist** analyzing a case. 
-Your role is to provide a structured diagnostic assessment tailored to children.
+    prompt = f"""You are a pediatric radiologist. Analyze this case with focus on AGE-APPROPRIATE diagnoses only.
 
 EXAMINATION: {sections['examination']}
 CLINICAL HISTORY: {sections['clinical_details']}
 COMPARISON: {sections['comparison']}
 RADIOLOGY FINDINGS: {sections['findings']}
 
-Please provide:
+Provide your assessment:
 
-1. **CLINICAL ASSESSMENT**  
-   - Summarize the key imaging findings and their clinical significance.  
+1. **Key Findings**: What do you see?
 
-2. **DIFFERENTIAL DIAGNOSIS**  
-   - Prioritize pediatric conditions.  
-   - Specifically consider **Juvenile Idiopathic Arthritis (JIA)** and **septic arthritis**.  
-   - If another diagnosis is more likely, justify why.  
-   - Avoid adult-only conditions (e.g., osteoarthritis, rotator cuff degeneration).  
+2. **Differential Diagnosis (PEDIATRIC ONLY)**: List most likely pediatric conditions. Do NOT include adult conditions like osteoarthritis, degenerative disease, or rotator cuff tears.
 
-3. **CLINICAL CORRELATION**  
-   - Relate the imaging findings to the clinical history (symptoms, MRSA status, age).  
-   - Explicitly explain what supports or argues against JIA vs septic arthritis.  
+3. **Clinical Correlation**: How do findings match the patient history?
 
-4. **RECOMMENDATIONS**  
-   - Suggest next diagnostic steps (e.g., labs, joint aspiration, MRI, referral).  
-   - Suggest management only in general terms (e.g., antibiotics vs rheumatology referral).  
+4. **Recommendations**: What are the next steps?
 
-Keep each section **concise (2–4 sentences)** and clinically focused.
-"""
-
+Remember: This is a PEDIATRIC patient. All diagnoses must be age-appropriate."""
     return prompt
 
 def process_single_report(report_text):

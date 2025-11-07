@@ -66,7 +66,7 @@ class AnnotationHelper:
         """Save ground truth to file"""
         with open(self.ground_truth_path, 'w', encoding='utf-8') as f:
             json.dump(self.ground_truth, f, indent=2, ensure_ascii=False)
-        print(f"\n✓ Saved to {self.ground_truth_path}")
+        print(f"\nSaved to {self.ground_truth_path}")
 
     def get_unannotated_reports(self):
         """Get list of reports not yet annotated"""
@@ -90,18 +90,18 @@ class AnnotationHelper:
         print(f"REPORT: {filename}")
         print("="*80)
 
-        print(f"\n📋 EXAMINATION:")
+        print(f"\nEXAMINATION:")
         print(f"   {sections.get('examination', 'N/A')[:150]}...")
 
-        print(f"\n🩺 CLINICAL HISTORY:")
+        print(f"\nCLINICAL HISTORY:")
         print(f"   {sections.get('clinical_details', 'N/A')}")
 
-        print(f"\n🔍 FINDINGS:")
+        print(f"\nFINDINGS:")
         findings = sections.get('findings', 'N/A')
         # Print first 300 chars
         print(f"   {findings[:300]}{'...' if len(findings) > 300 else ''}")
 
-        print(f"\n📝 CONCLUSION/IMPRESSION:")
+        print(f"\nCONCLUSION/IMPRESSION:")
         print(f"   {sections.get('conclusion', 'None provided')}")
 
         return sections
@@ -166,13 +166,13 @@ class AnnotationHelper:
         }
 
         # 1. Primary diagnosis
-        print("\n1️⃣  PRIMARY DIAGNOSIS")
+        print("\n1. PRIMARY DIAGNOSIS")
         print("What is the most likely diagnosis based on the findings?")
         primary = input("Enter primary diagnosis: ").strip()
         annotation['ground_truth']['primary_diagnosis'] = primary
 
         # 2. Differential diagnoses
-        print("\n2️⃣  DIFFERENTIAL DIAGNOSES")
+        print("\n2. DIFFERENTIAL DIAGNOSES")
         print("Select expected differential diagnoses (can choose multiple)")
         differentials = []
 
@@ -185,12 +185,12 @@ class AnnotationHelper:
             if dx is None:
                 break
             differentials.append(dx)
-            print(f"   ✓ Added: {dx}")
+            print(f"   Added: {dx}")
 
         annotation['ground_truth']['differential_diagnoses'] = differentials
 
         # 3. Key findings
-        print("\n3️⃣  KEY FINDINGS")
+        print("\n3. KEY FINDINGS")
         print("Enter key imaging findings (one at a time, -1 when done)")
         findings = []
 
@@ -206,7 +206,7 @@ class AnnotationHelper:
         annotation['ground_truth']['key_findings'] = findings
 
         # 4. Appropriate recommendations
-        print("\n4️⃣  APPROPRIATE RECOMMENDATIONS")
+        print("\n4. APPROPRIATE RECOMMENDATIONS")
         recommendations = []
 
         while True:
@@ -218,12 +218,12 @@ class AnnotationHelper:
             if rec is None:
                 break
             recommendations.append(rec)
-            print(f"   ✓ Added: {rec}")
+            print(f"   Added: {rec}")
 
         annotation['ground_truth']['appropriate_recommendations'] = recommendations
 
         # 5. Notes
-        print("\n5️⃣  NOTES (optional)")
+        print("\n5. NOTES (optional)")
         notes = input("Any special notes about this case? ").strip()
         annotation['ground_truth']['notes'] = notes
 
@@ -238,7 +238,7 @@ class AnnotationHelper:
         print(f"Recommendations: {len(recommendations)} listed")
 
         # Confirm
-        confirm = input("\n💾 Save this annotation? (y/n): ").strip().lower()
+        confirm = input("\nSave this annotation? (y/n): ").strip().lower()
 
         if confirm == 'y':
             # Remove any existing annotation for this file
@@ -246,10 +246,10 @@ class AnnotationHelper:
             # Add new annotation
             self.ground_truth.append(annotation)
             self.save_ground_truth()
-            print("✓ Annotation saved!")
+            print("Annotation saved!")
             return True
         else:
-            print("✗ Annotation discarded")
+            print("Annotation discarded")
             return False
 
     def quick_annotate_mode(self):
@@ -265,7 +265,7 @@ class AnnotationHelper:
         unannotated = self.get_unannotated_reports()
 
         if not unannotated:
-            print("\n✓ All reports are annotated!")
+            print("\nAll reports are annotated!")
             return
 
         print(f"\nFound {len(unannotated)} unannotated reports")
@@ -292,7 +292,7 @@ class AnnotationHelper:
             if batch_results:
                 ai_result = next((r for r in batch_results if r['filename'] == filename), None)
                 if ai_result:
-                    print(f"\n🤖 AI DIAGNOSIS (for reference):")
+                    print(f"\nAI DIAGNOSIS (for reference):")
                     print(f"{ai_result['ai_diagnosis'][:400]}...")
 
             choice = input("\n[1] Annotate  [2] Skip  [3] Quit: ").strip()
@@ -304,7 +304,7 @@ class AnnotationHelper:
             else:
                 print("Skipped")
 
-        print(f"\n✓ Quick annotation session complete!")
+        print(f"\nQuick annotation session complete!")
         print(f"Total annotated: {len([gt for gt in self.ground_truth if gt.get('annotated')])}")
 
     def batch_import_mode(self):
@@ -325,11 +325,11 @@ NOTES: MRSA positive - focus on infectious workup
 
         batch_file = "batch_annotations.txt"
         if os.path.exists(batch_file):
-            print(f"\n✓ Found {batch_file}")
+            print(f"\nFound {batch_file}")
             # Implementation would parse the file
             print("Feature coming soon! Use interactive mode for now.")
         else:
-            print(f"\n✗ No {batch_file} found")
+            print(f"\nNo {batch_file} found")
 
     def show_statistics(self):
         """Show annotation statistics"""
@@ -347,7 +347,7 @@ NOTES: MRSA positive - focus on infectious workup
         if annotated:
             print(f"\nAnnotated files:")
             for gt in annotated[:10]:
-                print(f"  ✓ {gt['filename']}")
+                print(f"  - {gt['filename']}")
             if len(annotated) > 10:
                 print(f"  ... and {len(annotated)-10} more")
 
@@ -377,7 +377,7 @@ NOTES: MRSA positive - focus on infectious workup
                 if unannotated:
                     self.annotate_report(unannotated[0])
                 else:
-                    print("\n✓ All reports annotated!")
+                    print("\nAll reports annotated!")
 
             elif choice == '2':
                 self.quick_annotate_mode()
@@ -395,13 +395,13 @@ NOTES: MRSA positive - focus on infectious workup
                     except ValueError:
                         print("Invalid choice")
                 else:
-                    print("\n✓ All reports annotated!")
+                    print("\nAll reports annotated!")
 
             elif choice == '4':
                 self.show_statistics()
 
             elif choice == '5':
-                print("\n👋 Goodbye!")
+                print("\nGoodbye!")
                 break
 
 
